@@ -11,3 +11,7 @@ header .search {
   background-color: transparent;
   border: none;
   cursor: pointer; }
+
+@media (max-width: 768px) {
+  img {
+    max-width: 120px; } }

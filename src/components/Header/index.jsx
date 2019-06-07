@@ -34,8 +34,8 @@ class Header extends Component {
   render() {
     return (
       <header>
-        <nav className="">
-          <div className="nav-wrapper">
+        <nav>
+          <div className="nav-wrapper hide-on-med-and-down">
             { this.state.search ? 
               <div className="row">
                 <div className="col s12 m12 l12 xl12">
@@ -47,7 +47,31 @@ class Header extends Component {
                 <a className="brand-logo center" href="/">
                   <img src={logo} alt=""/>
                 </a>
-                <ul className="right hide-on-med-and-down">
+                <ul className="right">
+                  <li>
+                    <button className="search" onClick={this.onClickNav} type="button">
+                      <i className="material-icons icon">search</i>
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            }
+          </div>
+
+
+          <div className="nav-wrapper show-on-medium hide-on-med-and-up">
+            { this.state.search ? 
+              <div className="row">
+                <div className="col s12 m12 l12 xl12">
+                  <SearchBar value={this.state.searchBar} placeholder="Pesquisar" onClick={this.onClickNav} onChange={this.handleFormChange} onSubmit={this.handleSubmit} />
+                </div>
+              </div>
+            :
+              <div>
+                <a className="brand-logo left" href="/">
+                  <img src={logo} alt=""/>
+                </a>
+                <ul className="right">
                   <li>
                     <button className="search" onClick={this.onClickNav} type="button">
                       <i className="material-icons icon">search</i>

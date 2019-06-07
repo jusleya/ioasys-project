@@ -16,3 +16,9 @@ header {
     cursor: pointer;
   }
 }
+
+@media (max-width: 768px) {
+  img {
+    max-width: 120px;
+  }
+}
