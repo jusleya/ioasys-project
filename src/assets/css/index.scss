@@ -20,3 +20,18 @@ body {
   font-family: $familyPrimary;
   font-size: 18px;
 }
+
+.is-loading-custom {
+  margin: 0 auto;
+  -webkit-animation: spinAround 500ms infinite linear;
+  animation: spinAround 500ms infinite linear;
+  border: 2px solid $textColor;
+  border-radius: 290486px;
+  border-right-color: transparent;
+  border-top-color: transparent;
+  content: "";
+  display: block;
+  height: 1.5em;
+  position: relative;
+  width: 1.5em;
+}

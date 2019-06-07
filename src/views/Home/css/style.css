@@ -1,0 +1,7 @@
+#home-view .search-false {
+  padding: 150px;
+  text-align: center; }
+
+@media (max-width: 768px) {
+  #home-view .search-false {
+    padding: 30px; } }

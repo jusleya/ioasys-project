@@ -6,40 +6,15 @@ import logo from "./img/logo.png";
 import './css/style.css';
 
 class Header extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      search: false,
-      searchBar: ""
-    }
-
-    this.onClickNav = this.onClickNav.bind(this);
-  }
-
-  handleFormChange = e => {
-    const { name, value } = e.target;
-    this.setState({ [name]: value });
-  };
-
-  handleSubmit = async (e) => {
-    e.preventDefault(e);
-    this.onClickNav();
-  }
-
-  onClickNav() {
-    this.setState({ search: !this.state.search });
-  }
-
   render() {
     return (
       <header>
         <nav>
           <div className="nav-wrapper hide-on-med-and-down">
-            { this.state.search ? 
+            { this.props.search ? 
               <div className="row">
                 <div className="col s12 m12 l12 xl12">
-                  <SearchBar value={this.state.searchBar} placeholder="Pesquisar" onClick={this.onClickNav} onChange={this.handleFormChange} onSubmit={this.handleSubmit} />
+                  <SearchBar value={this.props.valueSearch} placeholder="Pesquisar" onClick={this.props.onClickNav} onChange={this.props.onChange} onSubmit={this.props.onSubmit} />
                 </div>
               </div>
             :
@@ -49,7 +24,7 @@ class Header extends Component {
                 </a>
                 <ul className="right">
                   <li>
-                    <button className="search" onClick={this.onClickNav} type="button">
+                    <button className="search" onClick={this.props.onClickNav} type="button">
                       <i className="material-icons icon">search</i>
                     </button>
                   </li>
@@ -60,10 +35,10 @@ class Header extends Component {
 
 
           <div className="nav-wrapper show-on-medium hide-on-med-and-up">
-            { this.state.search ? 
+            { this.props.search ? 
               <div className="row">
                 <div className="col s12 m12 l12 xl12">
-                  <SearchBar value={this.state.searchBar} placeholder="Pesquisar" onClick={this.onClickNav} onChange={this.handleFormChange} onSubmit={this.handleSubmit} />
+                  <SearchBar value={this.props.valueSearch} placeholder="Pesquisar" onClick={this.props.onClickNav} onChange={this.props.onChange} onSubmit={this.props.onSubmit} />
                 </div>
               </div>
             :
@@ -73,7 +48,7 @@ class Header extends Component {
                 </a>
                 <ul className="right">
                   <li>
-                    <button className="search" onClick={this.onClickNav} type="button">
+                    <button className="search" onClick={this.props.onClickNav} type="button">
                       <i className="material-icons icon">search</i>
                     </button>
                   </li>

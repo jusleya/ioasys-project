@@ -1,7 +1,6 @@
 import React from "react";
 import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
 
-import Header from "./components/Header";
 import Home from "./views/Home";
 import Login from "./views/Login";
 import ScrollToTop from "./components/ScrollToTop";
@@ -13,7 +12,6 @@ const Routes = () => (
     <ScrollToTop>
       <main>
         <div className="main">
-          <Header />
           <Switch>
             <Route exact path="/" component={Login} />
             <Route exact path="/login" component={Login} />
