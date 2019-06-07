@@ -1,8 +1,12 @@
 @import "assets/css/variables.scss";
 
 header {
-  .navbar {
+  nav {
     background-image: linear-gradient(180deg, $pink, #a7174b);
-    height: 85px;
+    height: 80px !important;
+    padding: 10px;
+  }
+  .icon {
+    font-size: 40px !important;
   }
 }

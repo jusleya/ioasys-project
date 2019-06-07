@@ -6,7 +6,7 @@ import withConsumer from "../../components/AppContext/withConsumer";
 
 import Button from "../../components/Button";
 
-import email from "./img/senha.svg";
+import email from "./img/email.svg";
 import logo from "./img/logo.png";
 import senha from "./img/senha.svg";
 import "./css/style.css";
