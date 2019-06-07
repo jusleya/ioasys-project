@@ -70,7 +70,7 @@ class Home extends Component {
                     <div class="col s12 m7">
                       <div class="card horizontal">
                         <div class="card-image">
-                          <img src="https://lorempixel.com/100/190/nature/6" />
+                          <img src="https://lorempixel.com/100/190/nature/6" alt="" />
                         </div>
                         <div class="card-stacked">
                           <div class="card-content">
