@@ -8,3 +8,9 @@
     max-width: 100%;
   }
 }
+
+@media (max-width: 768px) {
+  #login-view {
+    padding: 30px;
+  }
+}
