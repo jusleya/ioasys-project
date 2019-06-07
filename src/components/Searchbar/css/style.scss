@@ -1,0 +1,40 @@
+@import 'assets/css/variables.scss';
+
+#search-bar-component {
+  .btn {
+    background-color: transparent;
+    border: none;
+    color: white;
+    height: 50px;
+  }
+  input {
+    color: white;
+    box-shadow: none;
+    font-size: 20px;
+    height: 50px;
+    width: 100%;
+    &:focus{
+      background-color: transparent;
+    }
+  }
+  .input::placeholder {
+    color: rgba(0, 0, 0, 0.38);
+  }
+  input:-ms-input-placeholder {
+    color: rgba(0, 0, 0, 0.38);
+  }
+  input::-ms-input-placeholder {
+    color: rgba(0, 0, 0, 0.38);
+  }
+  .icon {
+    color: white;
+    font-size: 40px !important;
+  }
+  .icon-close {
+    color: white;
+    font-size: 20px !important;
+  }
+  .size-field {
+    width: 100%;
+  }
+}

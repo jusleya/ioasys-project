@@ -16,12 +16,6 @@ const Button = props =>
   //       {props.name}
   //     </a>
   //   </div>
-  // ) : props.type === "button" ? (
-  //   <div id="button-component">
-  //     <button className={`button ${props.isLoading ? "is-loading" : ""}`} onClick={props.onClick} disabled={props.disabled} type="button">
-  //       {props.name}
-  //     </button>
-  //   </div>
   ) : (
     <div id="button-component">
       <NavLink to={props.link} className={`button ${props.isLoading ? "is-loading" : ""}`}>

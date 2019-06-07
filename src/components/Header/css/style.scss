@@ -7,6 +7,12 @@ header {
     padding: 10px;
   }
   .icon {
+    color: white;
     font-size: 40px !important;
+  }
+  .search {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
   }
 }
