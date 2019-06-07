@@ -1,0 +1,15 @@
+#button-component .button {
+  background-color: #57bbbc;
+  border: 1px solid #57bbbc;
+  color: white !important;
+  height: auto;
+  padding: 10px 55px 11px 55px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+  -webkit-transition: 0.2s ease-in;
+  -moz-transition: 0.2s ease-in;
+  -o-transition: 0.2s ease-in;
+  transition: 0.2s ease-in; }
+  #button-component .button:hover {
+    background-color: #3a9192; }

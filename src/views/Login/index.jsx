@@ -3,12 +3,12 @@ import { NavLink, Redirect } from "react-router-dom";
 import SimpleReactValidator from "simple-react-validator";
 import auth from "../../auth";
 import withConsumer from "../../components/AppContext/withConsumer";
-import "./css/style.css";
 
 import Button from "../../components/Button";
-import Input from "../../components/Input";
+// import Input from "../../components/Input";
 
-// import logo from "../../assets/img/balacobaco_web_logo.png";
+import logo from "./img/logo.png";
+import "./css/style.css";
 
 class Login extends Component {
   constructor(props) {
@@ -27,14 +27,8 @@ class Login extends Component {
     });
   }
 
-  componentWillMount() {
-    if (this.props.userAuth) {
-      this.props.history.push("/estadias");
-    }
-  }
-
   componentDidMount() {
-    document.title = "Login - Balacobaco";
+    document.title = "Login";
   }
 
   handleFormChange = e => {
@@ -92,46 +86,47 @@ class Login extends Component {
   };
 
   render() {
-    if (this.props.userAuth) {
-      if(this.props.userScope.admin) {
-        // return <Redirect to="/valores" />;
-        return <Redirect to="/estadias" />;
-      } else {
-        return <Redirect to="/estadias" />;
-      }
-    }
-
     return (
       <div id="login-view">
-        <div className="section">
+        <section>
           <div className="container">
             <div className="logo">
-              {/* <img src={logo} alt="" /> */}
+              <div className="row">
+                <div className="col-sm">
+                  <img src={logo} alt="" />
+                </div>
+              </div>
             </div>
 
+            <div className="row">
+              <div className="col">
+
+              </div>
+            </div>
+{/* 
             <div className="columns is-centered">
               <div className="column is-8-tablet is-6-desktop">
                 <div className="box-round">
                   <form onSubmit={this.handleSubmit}>
-                    <div className="field">
-                      <Input
+                    <div className="field"> */}
+                      {/* <Input
                         label="Login"
                         name="email"
                         type="email"
                         value={this.state.email}
                         onChange={this.handleFormChange}
-                      />
-                      <span>
+                      /> */}
+                      {/* <span>
                         {this.validator.message(
                           "email",
                           this.state.email,
                           "required"
                         )}
-                      </span>
-                    </div>
+                      </span> */}
+                    {/* </div>
 
-                    <div className="field margin-input">
-                      <Input
+                    <div className="field margin-input"> */}
+                      {/* <Input
                         label="Senha"
                         name="password"
                         type="password"
@@ -144,32 +139,28 @@ class Login extends Component {
                           this.state.password,
                           "required"
                         )}
-                      </span>
-                    </div>
+                      </span> */}
+                    {/* </div>
 
                     <div className="answer margin-input">
                       {this.state.answer}
-                    </div>
+                    </div> */}
 
                     <div className="field margin-other btn">
-                      <Button
-                        name="Entrar"
-                        type="submit"
-                        isLoading={this.state.isLoadingButton}
-                      />
+                      <Button name="Entrar" type="submit" isLoading={this.state.isLoadingButton} />
                     </div>
 
-                    <div className="field margin-other forgot">
+                    {/* <div className="field margin-other forgot">
                       <NavLink to="/login/redefinir-senha">
                         Esqueceu sua senha?
                       </NavLink>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
+                    </div> */}
+                  {/* </form> */}
+                {/* </div> */}
+              {/* </div> */}
+            {/* </div> */}
           </div>
-        </div>
+        </section>
       </div>
     );
   }

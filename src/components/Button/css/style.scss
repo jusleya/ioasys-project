@@ -1,0 +1,23 @@
+@import "assets/css/variables.scss";
+
+#button-component {
+  .button {
+    background-color: $button;
+    border: 1px solid $button;
+    color: white !important;
+    height: auto;
+    padding: 10px 55px 11px 55px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+
+    -webkit-transition: 0.2s ease-in;
+    -moz-transition: 0.2s ease-in;
+    -o-transition: 0.2s ease-in;
+    transition: 0.2s ease-in;
+
+    &:hover {
+      background-color: $hover;
+    }
+  }
+}
