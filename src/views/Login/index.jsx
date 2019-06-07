@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import SimpleReactValidator from "simple-react-validator";
 // import { NavLink, Redirect } from "react-router-dom";
-import withConsumer from "../../components/AppContext/withConsumer";
-// import auth from "../../auth";
+import axios from "axios";
 
 import Button from "../../components/Button";
 
@@ -15,8 +14,8 @@ class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: "",
-      password: "",
+      email: "testeapple@ioasys.com.br",
+      password: "12341234",
       answer: "",
       isLoadingButton: false
     };
@@ -35,11 +34,50 @@ class Login extends Component {
   handleFormChange = e => {
     const { name, value } = e.target;
     this.setState({ [name]: value });
-    this.setState({ answer: "" });
   };
 
   handleSubmit = async e => {
     e.preventDefault();
+    this.setState({ isLoadingButton: true });
+    this.setState({ answer: "" });
+    this.setState({ answer: "" });
+
+    if (!this.validator.allValid()) {
+      this.setState({
+        answer: [
+          <i className="material-icons" key="">
+            error_outline
+          </i>,
+          "Erros de validações nos campos."
+        ]
+      });
+      this.setState({ isLoadingButton: false });
+      this.validator.showMessages();
+      this.forceUpdate();
+      return;
+    }
+
+    await axios.post(
+      `${process.env.REACT_APP_API_CONTACT_URI}users/auth/sign_in`, {
+        email: this.state.email,
+        password: this.state.password
+      }
+    )
+      .then(() => {
+        this.setState({
+          answer: [
+            <i className="material-icons" key="">
+              check_circle_outline
+            </i>,
+            "Usuário cadastrado com sucesso."
+          ]
+        });
+      })
+      .catch(err => {
+      })
+      .finally(() => {
+        this.setState({ isLoadingButton: false });
+      });
   };
 
   render() {
@@ -60,12 +98,12 @@ class Login extends Component {
               </div>
             </div>
 
-            <form className="col s12 m12 l12 xl12">
+            <form className="col s12 m12 l12 xl12" onSubmit={this.handleSubmit}>
               <div className="row center-align">
                 <div className="col m3 l3 xl3" />
                 <div className="input-field col s12 m6 l6 xl6">
                   <img className="prefix" src={email} alt=""/>
-                  <input id="icon_prefix" name="email" type="email" value={this.state.email} onChange={this.handleFormChange}  />
+                  <input id="icon_prefix" name="email" type="text" value={this.state.email} onChange={this.handleFormChange}  />
                   <label className="icon_prefix">E-mail</label>
                 </div>
                 <div className="col m3 l3 xl3" />
@@ -74,7 +112,7 @@ class Login extends Component {
                 <div className="col m3 l3 xl3" />
                 <div className="input-field col s12 m6 l6 xl6">
                   <img className="prefix" src={senha} alt=""/>
-                  <input id="icon_prefix" name="password" type="password" value={this.state.password} onChange={this.handleFormChange}  />
+                  <input id="icon_prefix_senha" name="password" type="password" value={this.state.password} onChange={this.handleFormChange}  />
                   <label className="icon_prefix">Senha</label>
                 </div>
                 <div className="col m3 l3 xl3" />
@@ -94,4 +132,4 @@ class Login extends Component {
   }
 }
 
-export default withConsumer(Login);
+export default Login;
