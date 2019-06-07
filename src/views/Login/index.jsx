@@ -4,12 +4,11 @@ import SimpleReactValidator from "simple-react-validator";
 import withConsumer from "../../components/AppContext/withConsumer";
 // import auth from "../../auth";
 
-// import Button from "../../components/Button";
-import Input from "../../components/Input";
+import Button from "../../components/Button";
 
-import email from "./img/email.svg";
+import email from "./img/senha.svg";
 import logo from "./img/logo.png";
-// import senha from "./img/senha.svg";
+import senha from "./img/senha.svg";
 import "./css/style.css";
 
 class Login extends Component {
@@ -61,47 +60,35 @@ class Login extends Component {
               </div>
             </div>
 
-            <form className="col s12">
-              <div className="row">
-                <div class="input-field col s6">
-                  {/* <img src={email} alt=""/> */}
-                  <input id="icon_prefix" type="text" class="validate" />
-                  <label for="icon_prefix">E-mail</label>
+            <form className="col s12 m12 l12 xl12">
+              <div className="row center-align">
+                <div className="col m3 l3 xl3" />
+                <div className="input-field col s12 m6 l6 xl6">
+                  <img className="prefix" src={email} alt=""/>
+                  <input id="icon_prefix" name="email" type="email" value={this.state.email} onChange={this.handleFormChange}  />
+                  <label className="icon_prefix">E-mail</label>
                 </div>
+                <div className="col m3 l3 xl3" />
+              </div>
+              <div className="row center-align">
+                <div className="col m3 l3 xl3" />
+                <div className="input-field col s12 m6 l6 xl6">
+                  <img className="prefix" src={senha} alt=""/>
+                  <input id="icon_prefix" name="password" type="password" value={this.state.password} onChange={this.handleFormChange}  />
+                  <label className="icon_prefix">Senha</label>
+                </div>
+                <div className="col m3 l3 xl3" />
+              </div>
+              <div className="row center-align">
+                <div className="col m3 l3 xl3" />
+                <div className="col col s12 m6 l6 xl6 center-align">
+                  <Button name="Entrar" type="submit" isLoading={this.state.isLoadingButton} />
+                </div>
+                <div className="col m3 l3 xl3" />
               </div>
             </form>
           </div>
         </section>
-        {/* <section> */}
-
-            {/*
-                <form>
-                  <div className="row">
-                    <div className="col-sm-4 col-1" />
-                    <div className="col-sm-4 center justify-content-center">
-                      <Input label="E-mail" img={email} name="email" type="email" value={this.state.email} onChange={this.handleFormChange} />
-                    </div>
-                    <div className="col-sm-4" />
-                  </div>
-                  <div className="row">
-                    <div className="col-sm-4" />
-                    <div className="col-sm-4 center justify-content-center">
-                      <Input label="E-mail" img={senha} name="email" type="email" value={this.state.email} onChange={this.handleFormChange} />
-                    </div>
-                    <div className="col-sm-4" />
-                  </div>
-                  <div className="row margin">
-                    <div className="col-sm-4" />
-                    <div className="col-sm-4 center justify-content-center">
-                      <Button name="Entrar" type="submit" isLoading={this.state.isLoadingButton} />
-                    </div>
-                    <div className="col-sm-4" />
-                  </div>
-                </form>
-              </div>
-            </div> */}
-          {/* </div> */}
-        {/* </section> */}
       </div>
     );
   }

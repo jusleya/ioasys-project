@@ -41,11 +41,11 @@ const Routes = () => (
     <ScrollToTop>
       <main>
         <div className="main">
-          <CustomHeader />
+          <Header />
           <Switch>
             <Route exact path="/" component={Login} />
             <Route exact path="/login" component={Login} />
-            <PrivateRoute exact path="/" component={Home} />
+            <Route exact path="/inicio" component={Home} />
           </Switch>
         </div>
       </main>

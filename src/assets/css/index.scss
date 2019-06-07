@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
-// @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 @import "assets/css/variables.scss";
 // @import 'bootstrap/dist/css/bootstrap';
 @import 'materialize-css/dist/css/materialize';
@@ -19,12 +19,4 @@ body {
 * {
   font-family: $familyPrimary;
   font-size: 18px;
-}
-
-.center {
-  text-align: center;
-}
-
-.margin {
-  margin-top: 50px;
 }

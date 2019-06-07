@@ -10,6 +10,7 @@ const useStyles = makeStyles(theme => ({
     margin: theme.spacing(1),
   },
 }));
+
 function InputWithIcon(props) {
   const classes = useStyles();
 
